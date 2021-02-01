@@ -102,7 +102,7 @@ services:
     volumes:
       - "./db/init.sql:/docker-entrypoint-initdb.d/init.sql"
     networks:
-      - "k8scourse"
+      - k8scourse
   k8scourse-back:
     image: joellord/k8scourse-back:1
     ports:
@@ -110,7 +110,7 @@ services:
     environment:
       - MYSQL_HOST=k8scourse-db
     networks:
-      - "k8scourse"
+      - k8scourse
   k8scourse-front:
     image: joellord/k8scourse-front:1
     ports:
